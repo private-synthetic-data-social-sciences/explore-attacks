@@ -19,8 +19,8 @@ def main(n):
     data = pd.read_csv(filename, index_col=0)
     if n > data.shape[0]:
         raise ValueError("Do not have enough samples")
-    data = data.iloc[:n, :]
-    print(data.to_csv(index=None))
+    data_sample = data.sample(n=n)
+    print(data_sample.to_csv(index=None))
 
 
 
