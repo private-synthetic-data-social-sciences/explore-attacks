@@ -4,19 +4,33 @@ version = "0.1.0"
 description = ""
 authors = ["f-hafner <f.hafner@esciencecenter.nl>"]
 readme = "README.md"
-packages = [{include = "explore_attacks"}]
+# packages = [{include = "explore_attacks"}] # otherwise get error: "explore_attacks does not contain any element"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+# when using DP-CGANS only
+# python = ">=3.9,<3.10" # for DP-CGANS
+# dp-cgans = { git = "https://github.com/sunchang0124/dp_cgans.git/", rev = "0ed8b5c" }
+# dp-cgans = "*"
+# sdv = "0.14.0"
+
+# when using TAPAS only
+# python = "~3.10"
+# tapas = {git = "git@github.com:alan-turing-institute/privacy-sdg-toolbox.git"}
+
+# when using both
+python = "~3.9"
+dp-cgans = "*"
+sdv = "0.14.0"
 tapas = {git = "git@github.com:alan-turing-institute/privacy-sdg-toolbox.git"}
+numba = ">=0.57" # https://stackoverflow.com/questions/74947992/how-to-remove-the-error-systemerror-initialization-of-internal-failed-without
+
+# always
 scikit-learn = "^1.2.2"
+
+
+
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-
-
-
-
 
