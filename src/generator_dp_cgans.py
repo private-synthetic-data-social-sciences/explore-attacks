@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-"""Generate synthetic data with DP-CGANS model"""
+"""Generate synthetic data with DP-CGANS model.
+
+This generator can be called by TAPAS to generate synthetic data given an input dataset.
+"""
 
 
 import sys
